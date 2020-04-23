@@ -1,0 +1,59 @@
+index 0
+name Rainfarn
+atk 4
+type normal
+
+index 1
+name Cynthia
+atk 4
+type normal
+
+index 2
+name Cahir_Mawr_Dyffryn_aep_Ceallach
+atk 6
+type normal
+
+index 3
+name Renuald_aep_Matsen
+atk 5
+type normal
+
+index 4
+name Fringilla_Vigo
+atk 6
+type normal
+
+index 5
+name Assire_var_Anahid
+atk 6
+type normal
+
+index 6
+name Triss
+atk 7
+type hero
+
+index 7
+name Vernon_Roche
+atk 10
+type hero
+
+index 8
+name Black_Infantry_Archer
+atk 10
+type hero
+
+index 9
+name Philippa_Eilhart
+atk 10
+type hero
+
+index 10
+name Morvran_Voorhis
+atk 10
+type hero
+
+index 11
+name Geralt
+atk 15
+type hero
