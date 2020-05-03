@@ -2,21 +2,23 @@
 class Board
 {
 public:
-	Board(SDL_Renderer* renderer);
+	Board(SDL_Renderer* renderer, Empire player, Empire enemy);
 	~Board();
 	void draw(SDL_Renderer* renderer);
-	void initPlayer(SDL_Renderer* renderer);
-	void initRole();
 	Player* getPlayer();
+	Side* getPlayerSide();
+	Side* getEnemySide();
 	Enemy* getEnemy();
-	Role* getRole(Lane lane);
+	Role* getEffectRole();
+	void updateEffect(SDL_Renderer* renderer);
 private:
+	void initPlayer(SDL_Renderer* renderer, Empire player, Empire enemy);
 	Player* player;
 	Enemy* enemy;
+	Side* playerSide;
+	Side* enemySide;
+	Role* effect;
 	SDL_Rect rect;
 	SDL_Texture* texture;
-	Role* melee;
-	Role* range;
-	Role* siege;
 };
 

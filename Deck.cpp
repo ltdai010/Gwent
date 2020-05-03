@@ -44,13 +44,28 @@ void Deck::show(SDL_Renderer* renderer)
 	}
 }
 
+bool Deck::allOnBoard()
+{
+	for (int i = 1; i < bunchOfCard.size(); ++i)
+	{
+		if (!bunchOfCard.at(i)->isOnBoard())
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
 void Deck::generateCard(Empire empire, SDL_Renderer* renderer)
 {
 	for (int i = 0; i < MAX_CARD_IN_DECK - 1; ++i)
 	{
 		srand(time(0) + i);
 		int random = rand()%17;
-		bunchOfCard.push_back(new Card(renderer, random, empire));
+		if(random < COMBAT_UNIT_NUMBER)
+			bunchOfCard.push_back(new Card(renderer, random, empire));
+		else
+			bunchOfCard.push_back(new EffectCard(renderer, random, empire));
 	}
 }
 

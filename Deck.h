@@ -8,6 +8,7 @@ public:
 	void generateCard(Empire empire, SDL_Renderer* renderer);
 	std::vector<Card*> getBunch();
 	void unHoldAll();
+	bool allOnBoard();
 private:
 	std::vector<Card*> bunchOfCard;
 };

@@ -7,6 +7,7 @@ Player::Player(std::string name)
 	this->name = name;
 	this->score = 0;
 	holded = false;
+	turn = false;
 }
 
 
@@ -49,4 +50,14 @@ void Player::arrangeCard()
 		deck->getBunch().at(i)->setLocation(start_point, SCREEN_HEIGHT - IN_DECK_CARD_HEIGHT - 5);
 		deck->getBunch().at(i)->setSize(IN_DECK_CARD_WIDTH, IN_DECK_CARD_HEIGHT);
 	}
+}
+
+void Player::setTurn(bool turn)
+{
+	this->turn = turn;
+}
+
+bool Player::inTurn()
+{
+	return this->turn;
 }

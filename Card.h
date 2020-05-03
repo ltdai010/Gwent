@@ -12,13 +12,26 @@ public:
 	int getLocationY();
 	void setHolded(bool holded);
 	bool isHolded();
-private:
+	void setOnBoard(bool onBoard);
+	bool isOnBoard();
+	void setLane(Lane lane);
+	void setDamage(int dam);
+	int getDamage();
+	int getMaxDamage();
+	void setMaxDamage(int max);
+	Lane getLane();
+	Type getType();
+protected:
 	SDL_Texture* texture;
 	Empire empire;
 	int index;
-	std::ifstream file;
+	int damage;
+	int maxDamage;
+	Type type;
 	bool holded;
-protected:
+	bool onBoard;
+	std::ifstream file;
 	SDL_Rect rect;
+	Lane lane;
 };
 

@@ -1,19 +1,14 @@
 index 12
 name Clear_Weather
-type clear
 
 index 13
 name Biting_Frost
-type short_range
 
 index 14
 name Impenetrable_Fog
-type long_rage
 
 index 15
 name Torrential_Rain
-type seige
 
 index 16
 name Commanders_Horn
-type double_line

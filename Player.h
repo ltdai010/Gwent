@@ -10,10 +10,13 @@ public:
 	void arrangeCard();
 	void setHolded(bool holded);
 	bool getHolded();
+	bool inTurn();
+	void setTurn(bool turn);
 private:
 	Deck* deck;
 	int score;
 	std::string name;
 	bool holded;
+	bool turn;
 };
 
