@@ -73,6 +73,7 @@ void GameField::mouseCheck()
 					hoverCard(board->getPlayer()->getDeck()->getBunch().at(i), mouseX, mouseY))
 				{
 					std::cout << "Mouse left clicked" << std::endl;
+					//check if the card is already hold
 					if (board->getPlayer()->getDeck()->getBunch().at(i)->isHolded() && board->getPlayer()->inTurn())
 					{
 						board->getPlayer()->getDeck()->getBunch().at(i)->setOnBoard(true);
@@ -92,6 +93,7 @@ void GameField::mouseCheck()
 						std::cout << board->getPlayerSide()->totalDamage(board->getPlayerSide()->getRole(RANGE)) << std::endl;
 						std::cout << board->getPlayerSide()->totalDamage(board->getPlayerSide()->getRole(SIEGE)) << std::endl;
 					}
+					//if not, hold the card
 					board->getPlayer()->getDeck()->unHoldAll();
 					board->getPlayer()->getDeck()->getBunch().at(i)->setHolded(true);
 					board->getPlayer()->setHolded(true);
@@ -120,6 +122,7 @@ void GameField::enemyTurn()
 		int enemyTotalDamage = enemyMelee + enemyRange + enemySiege;
 		if (playerTotalDamage >= enemyTotalDamage)
 		{
+			//if player's melee score is high
 			if (playerMelee > enemyMelee)
 			{
 				for (int i = 0; i < board->getEnemy()->getDeck()->getBunch().size(); ++i)
@@ -139,6 +142,7 @@ void GameField::enemyTurn()
 					}
 				}
 			}
+			//if player's range score is high
 			if (playerRange > enemyRange)
 			{
 				for (int i = 0; i < board->getEnemy()->getDeck()->getBunch().size(); ++i)
@@ -158,6 +162,7 @@ void GameField::enemyTurn()
 					}
 				}
 			}
+			//if player's siege score is high
 			if (playerSiege > enemySiege)
 			{
 				for (int i = 0; i < board->getEnemy()->getDeck()->getBunch().size(); ++i)
